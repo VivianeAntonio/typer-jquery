@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">    
 </head>
+
 <body>
-   <h1>Alura Typer</h1>
-   <p class="frase">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi culpa nostrum cupiditate nemo pariatur inventore corrupti. Earum, sequi nesciunt! Nihil qui necessitatibus doloremque dolorem ut vel, asperiores repudiandae.</p>
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+        <p class="frase center">Esta frase tem oito belas e grandiosas palavras.</p>
 
-   <ul class="informacoes">
-    <li><span id="tamanho-frase"></span> palavras</li>      
-    <li>10 segundos</li>                                       
-   </ul>
+        <ul class="informacoes center">
+            <li>
+                <i class="small material-icons icones">description</i>
+                <span id="tamanho-frase">0</span> palavras
+            </li>
+            <li>
+                <i class="small material-icons icones">query_builder</i>
+                <span id="tempo-digitacao">10</span> segundos
+            </li>
+        </ul>
 
-   <script src="js/jquery.js"></script>
-   <script src="js/main.js"></script>
+        <textarea class="campo-digitacao" cols="50" rows="8"></textarea>
+
+        <div class="botoes">
+            <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar"><i class="material-icons">restore</i></a>
+
+        </div>
+        <!-- <button id="botao-reiniciar">Reiniciar Jogo</button> -->
+
+        <ul class="center">
+            <li><span id="contador-caracteres">0</span> caracteres</li>
+            <li><span id="contador-palavras">0</span> palavras</li>
+        </ul>
+
+        <section class="placar">
+            <h3 class="center">Placar</h3>
+            <table class="centered bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nº de palavras</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>   
+                    <tr>
+                        <td>User 1</td>
+                        <td>10</td>
+                        <td>
+                            <a href="#" class="botao-remover"><i class="small material-icons">delete</i>
+                            </a>
+                        </td>
+                    </tr>                 
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/placar.js"></script>
+
 </body>
+
 </html>
