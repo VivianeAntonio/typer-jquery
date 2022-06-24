@@ -14,6 +14,11 @@
         <h1 class="center">Alura Typer</h1>
         <p class="frase center">Esta frase tem oito belas e grandiosas palavras.</p>
 
+        <div class="center">
+            <img src="img/spinner.gif" alt="carregando" id="spinner">
+            <p id="erro">Ocorreu um erro, por favor tente novamente.</p>
+        </div>
+
         <ul class="informacoes center">
             <li>
                 <i class="small material-icons icones">description</i>
@@ -28,11 +33,12 @@
         <textarea class="campo-digitacao" cols="50" rows="8"></textarea>
 
         <div class="botoes">
-            <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar"><i class="material-icons">restore</i></a>
-
+            <a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar" title="Reiniciar"><i class="material-icons" >restore</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light green" id="botao-placar" title="Placar"><i class="material-icons" >assignment</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light blue" id="botao-frase" title="Frases"><i class="material-icons" >shuffle</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light cyan" id="botao-frase-id" title="Escolher frase"><i class="material-icons" >repeat_one</i></a>
+            <input type="number" id="frase-id" min="0">
         </div>
-        <!-- <button id="botao-reiniciar">Reiniciar Jogo</button> -->
-
         <ul class="center">
             <li><span id="contador-caracteres">0</span> caracteres</li>
             <li><span id="contador-palavras">0</span> palavras</li>
@@ -49,14 +55,14 @@
                     </tr>
                 </thead>
                 <tbody>   
-                    <tr>
+                    <!-- <tr>
                         <td>User 1</td>
                         <td>10</td>
                         <td>
                             <a href="#" class="botao-remover"><i class="small material-icons">delete</i>
                             </a>
                         </td>
-                    </tr>                 
+                    </tr>                  -->
                 </tbody>
             </table>
         </section>
@@ -66,6 +72,8 @@
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
     <script src="js/placar.js"></script>
+    <script src="js/frase.js"></script>
+
 
 </body>
 

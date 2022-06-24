@@ -1,10 +1,21 @@
+$("#botao-placar").click(mostraPlacar);
+
 function inserePlacar(){
     var corpoTabela = $(".placar").find("tbody");
-    var usuario = "User 2";
+    var usuario = "User";
     var numPalavras = $("#contador-palavras").text();
     var linha = novaLinha(usuario, numPalavras);
     linha.find(".botao-remover").click(removeLinha);
-    corpoTabela.prepend(linha);
+    corpoTabela.append(linha); 
+    $(".placar").slideDown(500);
+    scrollPlacar();
+};
+
+function scrollPlacar(){
+    var posicaoPlacar = $(".placar").offset().top;
+    $("html").animate({ 
+        scrollTop: posicaoPlacar+"px"
+    }, 1000);
 };
 
 function novaLinha(usuario, numPalavras) { 
@@ -25,8 +36,14 @@ function novaLinha(usuario, numPalavras) {
 };
 
 function removeLinha(event) {  
-    //$(".botao-remover").click(function (event) {
         event.preventDefault();
-        $(this).parent().parent().remove();
-    //})
-};
+        var linha = $(this).parent().parent();
+        linha.fadeOut(1000);
+        setTimeout(function(){
+            linha.remove(); 
+        }, 1000)
+   };
+
+function mostraPlacar() {
+    $(".placar").stop().slideToggle(600);
+}
