@@ -8,6 +8,16 @@ $(document).ready(function () {
     inicializaMarcadores();
     $("#botao-reiniciar").click(reiniciaJogo);
     $(".botao-remover").click(removeLinha);
+    atualizaPlacar();
+
+    $("#usuarios").selectize({
+        create: true,
+        sortField: 'text'
+    });
+
+    $('.tooltip').tooltipster({
+        trigger: "custom"
+    });
 });
 
 function atualizaTempoInicial(tempo) {
